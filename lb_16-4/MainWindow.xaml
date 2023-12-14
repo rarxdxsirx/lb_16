@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="UserBalance" Height="350" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Window.Resources>
-        <lb_16_4:CutoffConverter x:Key="BalanceConverter"/>
+        <local:CutoffConverter x:Key="BalanceConverter"/>
     </Window.Resources>
     <Grid>
         <DataGrid x:Name="usersDataTable" AutoGenerateColumns="False">
@@ -17,8 +17,9 @@
                     <DataGridTextColumn.CellStyle>
                         <Style TargetType="DataGridCell">
                             <Style.Triggers>
-                                <DataTrigger Binding="{Binding Path=Balance, 
-                                    Converter= {StaticResource BalanceConverter}}">
+                                <DataTrigger Binding="{Binding Balance, 
+                                    Converter= {StaticResource BalanceConverter}}"
+                                             Value="false">
                                     <Setter Property="Foreground" Value="Red"/>
                                 </DataTrigger>
                             </Style.Triggers>

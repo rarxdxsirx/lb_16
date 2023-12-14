@@ -13,7 +13,7 @@ namespace lb_16_4
         public int Cutoff { get; set; } = 0;
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return ((int)value) > Cutoff;
+            return ((double)value) > Cutoff;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
